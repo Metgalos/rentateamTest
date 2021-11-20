@@ -4,6 +4,4 @@
         android:title="@string/list_of_user_item" />
     <item android:id="@+id/about_app"
         android:title="@string/about_app_item" />
-    <item android:id="@+id/profile"
-        android:title="@string/profile_item" />
 </menu>

@@ -10,7 +10,7 @@ import retrofit2.http.Query
 interface UsersApiService {
 
     @GET("/users")
-    fun getUsers(@Query("page") page: Int = 1): Single<ListResponse<UserResponse>>
+    fun getUsers(@Query("page") page: Int): Single<ListResponse<UserResponse>>
 
     companion object {
         const val BASE_URL = BuildConfig.USER_API_HOST
