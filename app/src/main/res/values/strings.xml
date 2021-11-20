@@ -3,4 +3,5 @@
     <string name="list_of_user_item">Список</string>
     <string name="about_app_item">О программе</string>
     <string name="profile_item">Пользователь</string>
+    <string name="about_message">Тестовое задание для Rentateam</string>
 </resources>
