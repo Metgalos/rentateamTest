@@ -12,10 +12,15 @@ class UsersAdapter : ListAdapter<User, UserViewHolder>(diffCallback) {
     var listener: UsersAdapterListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        return UserViewHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_user, parent, false)
-        )
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_user, parent, false)
+        val result = UserViewHolder(view)
+        view.setOnClickListener {
+            val position = result.adapterPosition
+            val item = getItem(position)
+            listener?.onUserClick(item.id)
+        }
+        return result
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {

@@ -4,4 +4,5 @@
     <dimen name="normal_margin">8dp</dimen>
     <dimen name="normal_padding">8dp</dimen>
     <dimen name="normal_text_size">14sp</dimen>
+    <dimen name="avatart_size">200dp</dimen>
 </resources>
