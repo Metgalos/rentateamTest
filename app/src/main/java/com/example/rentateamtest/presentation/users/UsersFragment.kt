@@ -10,12 +10,19 @@ import com.example.rentateamtest.databinding.FragmentUsersBinding
 import com.example.rentateamtest.presentation.common.BaseFragment
 import com.example.rentateamtest.presentation.users.adapter.UsersAdapter
 import com.example.rentateamtest.presentation.users.adapter.UsersAdapterListener
+import com.example.rentateamtest.utils.appComponent
+import javax.inject.Inject
 
 class UsersFragment : BaseFragment<FragmentUsersBinding>(
     FragmentUsersBinding::inflate,
 ) {
 
-    private val viewModel: UsersViewModel by viewModels()
+    @Inject
+    lateinit var viewModelFactory: UsersViewModelFactory
+
+    private val viewModel: UsersViewModel by viewModels {
+        viewModelFactory
+    }
 
     private val adapterListener by lazy {
         object : UsersAdapterListener {
@@ -35,6 +42,7 @@ class UsersFragment : BaseFragment<FragmentUsersBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireContext().appComponent.inject(this)
         with(binding.usersList) {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = usersAdapter

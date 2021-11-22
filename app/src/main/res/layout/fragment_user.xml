@@ -1,8 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.user.UserFragment">
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/user_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_padding"
+        tools:src="@android:drawable/btn_dialog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_margin"
+        android:text="@string/name_label"
+        app:layout_constraintEnd_toStartOf="@+id/user_avatar"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_avatar" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/name_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toEndOf="@+id/user_avatar"
+        app:layout_constraintTop_toTopOf="@+id/name_label"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Алексей" />
+
+    <TextView
+        android:id="@+id/last_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/last_name_label"
+        app:layout_constraintEnd_toEndOf="@+id/name_label"
+        app:layout_constraintStart_toStartOf="@+id/name_label"
+        app:layout_constraintTop_toBottomOf="@id/name_label" />
+
+    <TextView
+        android:id="@+id/last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/last_name_label"
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/last_name_label"
+        tools:text="Константинов" />
+
+    <TextView
+        android:id="@+id/email_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/email_label"
+        app:layout_constraintEnd_toEndOf="@+id/last_name_label"
+        app:layout_constraintStart_toStartOf="@+id/last_name_label"
+        app:layout_constraintTop_toBottomOf="@id/last_name_label" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/email_label"
+        app:layout_constraintEnd_toEndOf="@+id/last_name"
+        app:layout_constraintStart_toStartOf="@+id/last_name"
+        app:layout_constraintTop_toTopOf="@+id/email_label"
+        tools:text="alexey.konst@gmail.com" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

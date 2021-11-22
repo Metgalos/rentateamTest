@@ -1,6 +1,6 @@
 package com.example.rentateamtest.common.di
 
-import com.example.rentateamtest.data.network.repository.UsersRepositoryImpl
+import com.example.rentateamtest.data.repository.UsersRepositoryImpl
 import com.example.rentateamtest.domain.repository.UsersRepository
 import dagger.Binds
 import dagger.Module

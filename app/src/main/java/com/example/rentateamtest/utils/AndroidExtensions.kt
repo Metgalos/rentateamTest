@@ -1,6 +1,8 @@
 package com.example.rentateamtest.utils
 
 import android.content.Context
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.example.rentateamtest.App
 import com.example.rentateamtest.common.di.AppComponent
 import io.reactivex.disposables.CompositeDisposable
@@ -12,7 +14,8 @@ val Context.appComponent: AppComponent
         else -> applicationContext.appComponent
     }
 
-operator fun CompositeDisposable.plus(d: Disposable): CompositeDisposable {
-    add(d)
-    return this
+fun ImageView.load(url: String) {
+    Glide.with(this)
+        .load(url)
+        .into(this)
 }
